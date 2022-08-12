@@ -14,19 +14,14 @@ namespace SuperAdventure
     public partial class SuperAdventure : Form
     {
         private Player player;
+        private Location location;
         public SuperAdventure()
         {
             InitializeComponent();
 
-            player = new Player
-            {
-                Name = null,
-                CurrentHitPoints = 10,
-                MaximumHitPoints = 10,
-                Gold = 20,
-                ExperiencePoints = 0,
-                Level = 1
-            };
+            location = new Location(1, "Casa", "Essa é a sua casa");
+
+            player = new Player(null, 10, 0, 1, 10, 10);
 
             lblHitPoints.Text = player.CurrentHitPoints.ToString();
             lblGold.Text = player.Gold.ToString();
